@@ -1,5 +1,5 @@
 //
-//  TextFieldModifier.swift
+//  ThreadsTextFieldModifier.swift
 //  ThreadsCloneSwiftUI
 //
 //  Created by Oleksandr Isaiev on 15.05.2024.
@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct TextFieldModifier: ViewModifier {
+struct ThreadsTextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.none)
             .font(.subheadline)
             .padding(12)
             .background(Color(.systemGray6))
@@ -17,3 +19,4 @@ struct TextFieldModifier: ViewModifier {
             .padding(.horizontal, 24)
     }
 }
+

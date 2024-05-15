@@ -15,6 +15,9 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
+
+                Spacer()
+
                 Image(.threadsAppIcon)
                     .resizable()
                     .scaledToFit()
@@ -23,10 +26,10 @@ struct LoginView: View {
 
                 VStack {
                     TextField("Enter your email", text: $email)
-                        .modifier(TextFieldModifier())
+                        .modifier(ThreadsTextFieldModifier())
 
                     SecureField("Enter your pasword", text: $password)
-                        .modifier(TextFieldModifier())
+                        .modifier(ThreadsTextFieldModifier())
                 }
 
                 NavigationLink {
@@ -58,7 +61,7 @@ struct LoginView: View {
                 Divider()
 
                 NavigationLink {
-                    Text("Registration View")
+                    RegistrationView()
                 } label: {
                     HStack(spacing: 3) {
                         Text("Don't have an account?")
