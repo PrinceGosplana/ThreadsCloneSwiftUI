@@ -11,6 +11,7 @@
 		8A329DD22BF4CA3200EA7CF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329DD12BF4CA3200EA7CF8 /* ContentView.swift */; };
 		8A329DD42BF4CA3400EA7CF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A329DD32BF4CA3400EA7CF8 /* Assets.xcassets */; };
 		8A329DD82BF4CA3400EA7CF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A329DD72BF4CA3400EA7CF8 /* Preview Assets.xcassets */; };
+		8A329DE82BF4CBBC00EA7CF8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329DE72BF4CBBC00EA7CF8 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		8A329DD32BF4CA3400EA7CF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A329DD52BF4CA3400EA7CF8 /* ThreadsCloneSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThreadsCloneSwiftUI.entitlements; sourceTree = "<group>"; };
 		8A329DD72BF4CA3400EA7CF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A329DE72BF4CBBC00EA7CF8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,12 @@
 		8A329DCE2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				8A329DCF2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift */,
-				8A329DD12BF4CA3200EA7CF8 /* ContentView.swift */,
+				8A329DE32BF4CB4300EA7CF8 /* App */,
+				8A329DE22BF4CB3E00EA7CF8 /* Core */,
+				8A329DE12BF4CB3C00EA7CF8 /* Extensions */,
+				8A329DE02BF4CB3A00EA7CF8 /* Model */,
+				8A329DDF2BF4CB1A00EA7CF8 /* Services */,
+				8A329DDE2BF4CB1700EA7CF8 /* Utils */,
 				8A329DD32BF4CA3400EA7CF8 /* Assets.xcassets */,
 				8A329DD52BF4CA3400EA7CF8 /* ThreadsCloneSwiftUI.entitlements */,
 				8A329DD62BF4CA3400EA7CF8 /* Preview Content */,
@@ -67,6 +73,75 @@
 				8A329DD72BF4CA3400EA7CF8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8A329DDE2BF4CB1700EA7CF8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A329DDF2BF4CB1A00EA7CF8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8A329DE02BF4CB3A00EA7CF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A329DE12BF4CB3C00EA7CF8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A329DE22BF4CB3E00EA7CF8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8A329DE52BF4CB7F00EA7CF8 /* Authentication */,
+				8A329DE42BF4CB7D00EA7CF8 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8A329DE32BF4CB4300EA7CF8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8A329DCF2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8A329DE42BF4CB7D00EA7CF8 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8A329DD12BF4CA3200EA7CF8 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		8A329DE52BF4CB7F00EA7CF8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8A329DE62BF4CB9E00EA7CF8 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8A329DE62BF4CB9E00EA7CF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A329DE72BF4CBBC00EA7CF8 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A329DE82BF4CBBC00EA7CF8 /* LoginView.swift in Sources */,
 				8A329DD22BF4CA3200EA7CF8 /* ContentView.swift in Sources */,
 				8A329DD02BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift in Sources */,
 			);
