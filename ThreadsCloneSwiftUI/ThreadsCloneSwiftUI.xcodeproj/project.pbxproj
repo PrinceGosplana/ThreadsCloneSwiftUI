@@ -19,6 +19,9 @@
 		8A335FD22BF7010A0085C80F /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A335FD12BF7010A0085C80F /* ProfileThreadFilter.swift */; };
 		8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A335FD52BF72D030085C80F /* EditProfileView.swift */; };
 		8A3360102BF870680085C80F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33600F2BF870680085C80F /* RegistrationViewModel.swift */; };
+		8A3360122BF883270085C80F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360112BF883260085C80F /* AuthService.swift */; };
+		8A3360142BF883410085C80F /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360132BF883410085C80F /* AuthServiceProtocol.swift */; };
+		8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360152BF883AE0085C80F /* MockAuthService.swift */; };
 		8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */; };
 		8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D512BF5F09000BF1247 /* FeedView.swift */; };
 		8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */; };
@@ -43,6 +46,9 @@
 		8A335FD12BF7010A0085C80F /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
 		8A335FD52BF72D030085C80F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		8A33600F2BF870680085C80F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		8A3360112BF883260085C80F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8A3360132BF883410085C80F /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		8A3360152BF883AE0085C80F /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
 		8AFE7D512BF5F09000BF1247 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -235,6 +241,9 @@
 		8A33600D2BF870230085C80F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8A3360132BF883410085C80F /* AuthServiceProtocol.swift */,
+				8A3360112BF883260085C80F /* AuthService.swift */,
+				8A3360152BF883AE0085C80F /* MockAuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -419,6 +428,9 @@
 				8A3360102BF870680085C80F /* RegistrationViewModel.swift in Sources */,
 				8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */,
 				8A329DF02BF4D94300EA7CF8 /* ThreadsTextFieldModifier.swift in Sources */,
+				8A3360142BF883410085C80F /* AuthServiceProtocol.swift in Sources */,
+				8A3360122BF883270085C80F /* AuthService.swift in Sources */,
+				8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */,
 				8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */,
 				8A329DE82BF4CBBC00EA7CF8 /* LoginView.swift in Sources */,
 				8A335FCC2BF6FB2C0085C80F /* ExploreCell.swift in Sources */,
