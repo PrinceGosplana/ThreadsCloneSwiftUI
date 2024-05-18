@@ -18,6 +18,7 @@
 		8A335FCF2BF6FD150085C80F /* CircularProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A335FCE2BF6FD150085C80F /* CircularProfileImage.swift */; };
 		8A335FD22BF7010A0085C80F /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A335FD12BF7010A0085C80F /* ProfileThreadFilter.swift */; };
 		8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A335FD52BF72D030085C80F /* EditProfileView.swift */; };
+		8A3360102BF870680085C80F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33600F2BF870680085C80F /* RegistrationViewModel.swift */; };
 		8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */; };
 		8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D512BF5F09000BF1247 /* FeedView.swift */; };
 		8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */; };
@@ -41,6 +42,7 @@
 		8A335FCE2BF6FD150085C80F /* CircularProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImage.swift; sourceTree = "<group>"; };
 		8A335FD12BF7010A0085C80F /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
 		8A335FD52BF72D030085C80F /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		8A33600F2BF870680085C80F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
 		8AFE7D512BF5F09000BF1247 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -134,12 +136,12 @@
 		8A329DE22BF4CB3E00EA7CF8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8A335FCD2BF6FCBC0085C80F /* Components */,
-				8AFE7D612BF5F20A00BF1247 /* Profile */,
 				8AFE7D5A2BF5F1AA00BF1247 /* Activity */,
 				8A329DE52BF4CB7F00EA7CF8 /* Authentication */,
+				8A335FCD2BF6FCBC0085C80F /* Components */,
 				8AFE7D542BF5F14200BF1247 /* Explore */,
 				8AFE7D502BF5F07D00BF1247 /* Feed */,
+				8AFE7D612BF5F20A00BF1247 /* Profile */,
 				8A329DE42BF4CB7D00EA7CF8 /* Root */,
 				8AFE7D4D2BF5EB9300BF1247 /* Tabbar */,
 				8AFE7D572BF5F16D00BF1247 /* ThreadCreation */,
@@ -166,6 +168,8 @@
 		8A329DE52BF4CB7F00EA7CF8 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				8A33600E2BF8702D0085C80F /* ViewModel */,
+				8A33600D2BF870230085C80F /* Service */,
 				8A329DE62BF4CB9E00EA7CF8 /* Views */,
 			);
 			path = Authentication;
@@ -226,6 +230,21 @@
 				8A335FD52BF72D030085C80F /* EditProfileView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8A33600D2BF870230085C80F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8A33600E2BF8702D0085C80F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A33600F2BF870680085C80F /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8AFE7D4D2BF5EB9300BF1247 /* Tabbar */ = {
@@ -397,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3360102BF870680085C80F /* RegistrationViewModel.swift in Sources */,
 				8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */,
 				8A329DF02BF4D94300EA7CF8 /* ThreadsTextFieldModifier.swift in Sources */,
 				8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */,
