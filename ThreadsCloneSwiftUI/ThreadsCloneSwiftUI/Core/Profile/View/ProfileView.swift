@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
 
+    @EnvironmentObject var authManager: AuthManager
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace var animation
     private var filterBarWidth: CGFloat {
@@ -98,7 +99,7 @@ struct ProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-//                        Task { try await AuthService.shared.signOut() }
+                        Task { await authManager.signout() }
                     } label: {
                         Image(systemName: "line.3.horizontal")
                     }
@@ -111,5 +112,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView().environmentObject(AuthManager(service: MockAuthService()))
 }
