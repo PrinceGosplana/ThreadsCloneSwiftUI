@@ -9,9 +9,13 @@ import SwiftUI
 
 struct RegistrationView: View {
 
-    @StateObject var viewModel = RegistrationViewModel()
+    @State var email = ""
+    @State var password = ""
+    @State var fullName = ""
+    @State var userName = ""
+    @EnvironmentObject var authManager: AuthManager
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         VStack {
             
@@ -24,21 +28,27 @@ struct RegistrationView: View {
                 .padding()
             
             VStack {
-                TextField("Enter your email", text: $viewModel.email)
+                TextField("Enter your email", text: $email)
                     .modifier(ThreadsTextFieldModifier())
 
-                SecureField("Enter your pasword", text: $viewModel.password)
+                SecureField("Enter your pasword", text: $password)
                     .modifier(ThreadsTextFieldModifier())
 
-                TextField("Enter your full name", text: $viewModel.fullName)
+                TextField("Enter your full name", text: $fullName)
                     .modifier(ThreadsTextFieldModifier())
 
-                TextField("Enter your user name", text: $viewModel.userName)
+                TextField("Enter your user name", text: $userName)
                     .modifier(ThreadsTextFieldModifier())
             }
 
             Button {
-                Task { try await viewModel.createUser() }
+                Task {
+                    await authManager.createUser(
+                        withEmail: email,
+                        password: password,
+                        fullName: fullName,
+                        userName: userName)
+                }
             } label: {
                 Text("Sign Up")
                     .font(.subheadline)
@@ -73,4 +83,5 @@ struct RegistrationView: View {
 
 #Preview {
     RegistrationView()
+        .environmentObject(AuthManager(service: MockAuthService()))
 }

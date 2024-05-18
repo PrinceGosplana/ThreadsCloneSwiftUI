@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ThreadsCloneSwiftUIApp: App {
+
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ContentView()
+                .environmentObject(AuthManager(service: AuthService()))
         }
     }
 }

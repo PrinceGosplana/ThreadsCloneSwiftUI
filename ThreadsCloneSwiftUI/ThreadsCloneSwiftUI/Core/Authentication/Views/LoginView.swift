@@ -11,6 +11,7 @@ struct LoginView: View {
 
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var authManager: AuthManager
 
     var body: some View {
         NavigationStack {
@@ -45,7 +46,7 @@ struct LoginView: View {
                 }
 
                 Button {
-
+                    Task { await authManager.login(withEmail: "", password: "")}
                 } label: {
                     Text("Login")
                         .font(.subheadline)
@@ -81,6 +82,7 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environmentObject(AuthManager(service: MockAuthService()))
 }
 
 

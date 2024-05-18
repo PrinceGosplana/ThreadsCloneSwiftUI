@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ContentViewModel()
+
+    @EnvironmentObject var authManager: AuthManager
 
     var body: some View {
         Group {
-            if viewModel.userSession != nil  {
+            if authManager.userSessionId != nil  {
                 ThreadsTabView()
             } else {
                 LoginView()
@@ -23,4 +24,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(AuthManager(service: MockAuthService()))
 }
