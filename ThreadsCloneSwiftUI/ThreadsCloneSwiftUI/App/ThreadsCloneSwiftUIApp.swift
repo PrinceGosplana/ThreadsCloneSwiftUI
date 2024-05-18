@@ -13,7 +13,7 @@ struct ThreadsCloneSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(AuthManager(service: AuthService()))
+                .environmentObject(AuthManager(service: AuthService.shared))
         }
     }
 }

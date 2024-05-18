@@ -9,6 +9,9 @@ import Foundation
 
 actor AuthService: AuthServiceProtocol {
     
+    static var shared = AuthService()
+    private init() {}
+    
     func login(withEmail email: String, password: String) async throws -> String? {
         UUID().uuidString
     }
