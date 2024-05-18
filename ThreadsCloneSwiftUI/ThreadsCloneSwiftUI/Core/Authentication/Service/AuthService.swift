@@ -9,6 +9,8 @@ import Foundation
 
 actor AuthService: AuthServiceProtocol {
 
+    @Published var userSession: String?
+
     static let shared = AuthService()
 
     private init() {}
