@@ -7,116 +7,52 @@
 
 import SwiftUI
 
+enum ProfileMode {
+    case edit, follow
+}
+
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
-    @EnvironmentObject var authManager: AuthManager
-    @State private var selectedFilter: ProfileThreadFilter = .threads
-    @Namespace var animation
-    private var filterBarWidth: CGFloat {
-        let count = CGFloat(ProfileThreadFilter.allCases.count)
-        return UIScreen.main.bounds.width / count - 20
-    }
+    let profileMode: ProfileMode
 
     private var currentUser: User? {
         viewModel.currentUser
     }
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                // bio and stats
-                VStack(spacing: 20) {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            // fullname and username
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(currentUser?.fullName ?? "")
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
+        ScrollView {
+            // bio and stats
+            VStack(spacing: 20) {
 
-                                Text(currentUser?.userName ?? "")
-                                    .font(.subheadline)
-                            }
+                ProfileHeader(user: currentUser)
 
-                            if let bio = currentUser?.bio {
-                                Text(bio)
-                                    .font(.footnote)
-                            }
+                Button {
 
-                            Text("2 followers")
-                                .font(.caption)
-                                .foregroundStyle(.gray)
+                } label: {
+                    Text(profileMode == .edit ? "Edit Profile" : "Follow")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(profileMode == .edit ? .black : .white)
+                        .frame(width: 352, height: 32)
+                        .background(profileMode == .edit ? .white : .black)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
                         }
-
-                        Spacer()
-
-                        CircularProfileImage()
-                    }
-
-                    Button {
-
-                    } label: {
-                        Text("Follow")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.white)
-                            .frame(width: 352, height: 32)
-                            .background(.black)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                    }
-
-                    // user content list view
-                    VStack {
-                        HStack {
-                            ForEach(ProfileThreadFilter.allCases) { filter in
-                                VStack {
-                                    Text(filter.title)
-                                        .font(.subheadline)
-                                        .fontWeight(selectedFilter == filter ? .semibold : .regular)
-
-                                    if selectedFilter == filter {
-                                        Rectangle()
-                                            .foregroundStyle(.black)
-                                            .frame(width: filterBarWidth, height: 1)
-                                            .matchedGeometryEffect(id: "item", in: animation)
-                                    } else {
-                                        Rectangle()
-                                            .foregroundStyle(.clear)
-                                            .frame(width: filterBarWidth, height: 1)
-                                    }
-                                }
-                                .onTapGesture {
-                                    withAnimation {
-                                        selectedFilter = filter
-                                    }
-                                }
-                            }
-                        }
-
-                        LazyVStack {
-                            ForEach(0 ... 10, id:\.self) { thread in
-                                ThreadCell()
-                            }
-                        }
-                    }
-                    .padding(.vertical, 8)
                 }
+
+                // user content list view
+                UserContentList()
             }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        Task { await authManager.signout() }
-                    } label: {
-                        Image(systemName: "line.3.horizontal")
-                    }
-                }
-            }
-            .padding(.horizontal)
-            .scrollIndicators(.hidden)
         }
+        
+        .navigationBarTitleDisplayMode(.inline)
+        .padding(.horizontal)
+        .scrollIndicators(.hidden)
     }
 }
 
 #Preview {
-    ProfileView().environmentObject(AuthManager(service: MockAuthService()))
+    ProfileView(profileMode: .follow)
 }

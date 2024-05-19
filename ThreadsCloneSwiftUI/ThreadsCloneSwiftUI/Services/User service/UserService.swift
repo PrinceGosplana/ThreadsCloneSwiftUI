@@ -11,10 +11,18 @@ actor UserService: UserServiceProtocol {
 
     static let shared = UserService()
 
-    func fetchCurrentUser() async throws -> User? {
-         User.mockUser
+    private var currentUser: User {
+        User.mockUsers[0]
     }
 
+    func fetchCurrentUser() async throws -> User? {
+         currentUser
+    }
+
+    static func fetchUsers() async throws -> [User] {
+        User.mockUsers
+    }
+    
     func reset() {
         // set current user nil
     }
