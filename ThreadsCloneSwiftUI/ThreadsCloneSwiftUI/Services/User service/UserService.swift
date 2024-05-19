@@ -14,4 +14,8 @@ actor UserService: UserServiceProtocol {
     func fetchCurrentUser() async throws -> User? {
          User.mockUser
     }
+
+    func reset() {
+        // set current user nil
+    }
 }

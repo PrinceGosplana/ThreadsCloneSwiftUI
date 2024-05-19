@@ -13,13 +13,14 @@ actor AuthService: AuthServiceProtocol {
     private init() {}
     
     func login(withEmail email: String, password: String) async throws -> String? {
-        User.mockUser.id
+        try await UserService.shared.fetchCurrentUser()?.id
     }
 
     func createUser(withEmail email: String, password: String, fullName: String, userName: String) async throws -> String? {
-        User.mockUser.id
+        try await UserService.shared.fetchCurrentUser()?.id
     }
 
     func signOut() async throws {
+        await UserService.shared.reset()
     }
 }
