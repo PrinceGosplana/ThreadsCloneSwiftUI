@@ -13,11 +13,11 @@ actor AuthService: AuthServiceProtocol {
     private init() {}
     
     func login(withEmail email: String, password: String) async throws -> String? {
-        UUID().uuidString
+        User.mockUser.id
     }
 
     func createUser(withEmail email: String, password: String, fullName: String, userName: String) async throws -> String? {
-        UUID().uuidString
+        User.mockUser.id
     }
 
     func signOut() async throws {

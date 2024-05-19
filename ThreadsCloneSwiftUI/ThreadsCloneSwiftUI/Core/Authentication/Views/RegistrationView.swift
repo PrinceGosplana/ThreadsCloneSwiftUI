@@ -40,6 +40,7 @@ struct RegistrationView: View {
                 TextField("Enter your user name", text: $userName)
                     .modifier(ThreadsTextFieldModifier())
             }
+            .textInputAutocapitalization(.never)
 
             Button {
                 Task {

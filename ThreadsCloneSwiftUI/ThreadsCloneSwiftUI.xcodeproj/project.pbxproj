@@ -23,6 +23,10 @@
 		8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360152BF883AE0085C80F /* MockAuthService.swift */; };
 		8A33601D2BF8AC520085C80F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33601C2BF8AC520085C80F /* AuthManager.swift */; };
 		8A3360212BF8DD2E0085C80F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360202BF8DD2E0085C80F /* User.swift */; };
+		8A3360262BF9EA7E0085C80F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360252BF9EA7E0085C80F /* UserService.swift */; };
+		8A3360292BF9EE260085C80F /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360282BF9EE260085C80F /* UserServiceProtocol.swift */; };
+		8A33602B2BF9EE310085C80F /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33602A2BF9EE300085C80F /* MockUserService.swift */; };
+		8A33602E2BF9EF2A0085C80F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33602D2BF9EF2A0085C80F /* ProfileViewModel.swift */; };
 		8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */; };
 		8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D512BF5F09000BF1247 /* FeedView.swift */; };
 		8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */; };
@@ -51,6 +55,10 @@
 		8A3360152BF883AE0085C80F /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		8A33601C2BF8AC520085C80F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8A3360202BF8DD2E0085C80F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8A3360252BF9EA7E0085C80F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		8A3360282BF9EE260085C80F /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		8A33602A2BF9EE300085C80F /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		8A33602D2BF9EF2A0085C80F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
 		8AFE7D512BF5F09000BF1247 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 				8A329DE92BF4D5D800EA7CF8 /* Components */,
 				8A329DE22BF4CB3E00EA7CF8 /* Core */,
 				8A329DE12BF4CB3C00EA7CF8 /* Extensions */,
+				8A3360272BF9EDC90085C80F /* Managers */,
 				8A329DE02BF4CB3A00EA7CF8 /* Model */,
 				8A329DD62BF4CA3400EA7CF8 /* Preview Content */,
 				8A329DDF2BF4CB1A00EA7CF8 /* Services */,
@@ -123,6 +132,8 @@
 		8A329DDF2BF4CB1A00EA7CF8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8A33600D2BF870230085C80F /* Auth service */,
+				8A3360242BF9EA640085C80F /* User service */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,9 +189,7 @@
 		8A329DE52BF4CB7F00EA7CF8 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				8A33601B2BF8AC3A0085C80F /* AuthManager */,
 				8A33600E2BF8702D0085C80F /* ViewModel */,
-				8A33600D2BF870230085C80F /* Service */,
 				8A329DE62BF4CB9E00EA7CF8 /* Views */,
 			);
 			path = Authentication;
@@ -243,14 +252,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8A33600D2BF870230085C80F /* Service */ = {
+		8A33600D2BF870230085C80F /* Auth service */ = {
 			isa = PBXGroup;
 			children = (
 				8A3360132BF883410085C80F /* AuthServiceProtocol.swift */,
 				8A3360112BF883260085C80F /* AuthService.swift */,
 				8A3360152BF883AE0085C80F /* MockAuthService.swift */,
 			);
-			path = Service;
+			path = "Auth service";
 			sourceTree = "<group>";
 		};
 		8A33600E2BF8702D0085C80F /* ViewModel */ = {
@@ -281,6 +290,32 @@
 				8A33601C2BF8AC520085C80F /* AuthManager.swift */,
 			);
 			path = AuthManager;
+			sourceTree = "<group>";
+		};
+		8A3360242BF9EA640085C80F /* User service */ = {
+			isa = PBXGroup;
+			children = (
+				8A33602A2BF9EE300085C80F /* MockUserService.swift */,
+				8A3360252BF9EA7E0085C80F /* UserService.swift */,
+				8A3360282BF9EE260085C80F /* UserServiceProtocol.swift */,
+			);
+			path = "User service";
+			sourceTree = "<group>";
+		};
+		8A3360272BF9EDC90085C80F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8A33601B2BF8AC3A0085C80F /* AuthManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		8A33602C2BF9EEFA0085C80F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A33602D2BF9EF2A0085C80F /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8AFE7D4D2BF5EB9300BF1247 /* Tabbar */ = {
@@ -367,6 +402,7 @@
 		8AFE7D612BF5F20A00BF1247 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8A33602C2BF9EEFA0085C80F /* ViewModel */,
 				8A335FD32BF72CB80085C80F /* Edit profile */,
 				8A335FD02BF700F80085C80F /* Model */,
 				8AFE7D622BF5F21300BF1247 /* View */,
@@ -453,21 +489,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */,
+				8A3360292BF9EE260085C80F /* UserServiceProtocol.swift in Sources */,
 				8A329DF02BF4D94300EA7CF8 /* ThreadsTextFieldModifier.swift in Sources */,
 				8A3360142BF883410085C80F /* AuthServiceProtocol.swift in Sources */,
 				8A3360122BF883270085C80F /* AuthService.swift in Sources */,
 				8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */,
 				8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */,
+				8A3360262BF9EA7E0085C80F /* UserService.swift in Sources */,
 				8A329DE82BF4CBBC00EA7CF8 /* LoginView.swift in Sources */,
 				8A335FCC2BF6FB2C0085C80F /* ExploreCell.swift in Sources */,
 				8AFE7D662BF5F30A00BF1247 /* ThreadCell.swift in Sources */,
 				8AFE7D5D2BF5F1BD00BF1247 /* ActivityView.swift in Sources */,
 				8AFE7D592BF5F18300BF1247 /* CreateThreadView.swift in Sources */,
 				8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */,
+				8A33602E2BF9EF2A0085C80F /* ProfileViewModel.swift in Sources */,
 				8A335FD22BF7010A0085C80F /* ProfileThreadFilter.swift in Sources */,
 				8A335FCF2BF6FD150085C80F /* CircularProfileImage.swift in Sources */,
 				8A329DD22BF4CA3200EA7CF8 /* ContentView.swift in Sources */,
 				8A329DD02BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift in Sources */,
+				8A33602B2BF9EE310085C80F /* MockUserService.swift in Sources */,
 				8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */,
 				8A33601D2BF8AC520085C80F /* AuthManager.swift in Sources */,
 				8AFE7D642BF5F21D00BF1247 /* ProfileView.swift in Sources */,

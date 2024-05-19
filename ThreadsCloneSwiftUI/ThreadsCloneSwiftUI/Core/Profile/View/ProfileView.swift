@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-
+    @StateObject var viewModel = ProfileViewModel()
     @EnvironmentObject var authManager: AuthManager
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace var animation
