@@ -50,7 +50,7 @@ struct ProfileView: View {
             }
         }
         .sheet(isPresented: $showEditProfile, content: {
-            EditProfileView()
+            EditProfileView(viewModel: CurrentUserProfileViewModel())
         })
         .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
