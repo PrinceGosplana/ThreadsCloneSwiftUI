@@ -36,7 +36,7 @@ struct ProfileHeader: View {
 
             Spacer()
 
-            CircularProfileImage(user: user)
+            CircularProfileImage(user: user, size: .medium)
         }
 
     }
