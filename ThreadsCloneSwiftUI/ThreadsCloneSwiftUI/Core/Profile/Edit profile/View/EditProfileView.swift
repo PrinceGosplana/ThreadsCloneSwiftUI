@@ -14,7 +14,7 @@ struct EditProfileView: View {
     @State private var link = ""
     @State private var isPrivateProfile = false
     @Environment(\.dismiss) var dismiss
-    @StateObject var viewModel: CurrentUserProfileViewModel
+    @StateObject var viewModel: EditProfileViewModel
 
     var body: some View {
         NavigationStack {
@@ -106,5 +106,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView(viewModel: CurrentUserProfileViewModel())
+    EditProfileView(viewModel: EditProfileViewModel())
 }
