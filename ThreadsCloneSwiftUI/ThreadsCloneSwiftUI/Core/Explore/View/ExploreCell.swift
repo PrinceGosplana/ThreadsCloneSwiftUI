@@ -12,8 +12,8 @@ struct ExploreCell: View {
 
     var body: some View {
         HStack {
-            CircularProfileImage()
-            
+            CircularProfileImage(user: user)
+
             VStack(alignment: .leading, spacing: 2) {
                 Text(user.userName)
                     .fontWeight(.semibold)
