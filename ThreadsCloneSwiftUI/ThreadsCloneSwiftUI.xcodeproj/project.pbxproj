@@ -33,7 +33,11 @@
 		8A33603A2BFA501D0085C80F /* UserContentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360392BFA501D0085C80F /* UserContentList.swift */; };
 		8A33603D2BFB6C620085C80F /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33603C2BFB6C620085C80F /* CurrentUserProfileViewModel.swift */; };
 		8A33603F2BFB72680085C80F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33603E2BFB72680085C80F /* EditProfileViewModel.swift */; };
-		8A3360422BFB89090085C80F /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360412BFB89090085C80F /* Thread.swift */; };
+		8A3360422BFB89090085C80F /* ThreadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360412BFB89090085C80F /* ThreadModel.swift */; };
+		8A3360452BFB8B9F0085C80F /* CreateThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360442BFB8B9F0085C80F /* CreateThreadViewModel.swift */; };
+		8A3360482BFB8BFE0085C80F /* ThreadServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */; };
+		8A33604A2BFB8C130085C80F /* ThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360492BFB8C130085C80F /* ThreadService.swift */; };
+		8A33604C2BFB8C240085C80F /* MockThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33604B2BFB8C240085C80F /* MockThreadService.swift */; };
 		8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */; };
 		8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D512BF5F09000BF1247 /* FeedView.swift */; };
 		8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */; };
@@ -72,7 +76,11 @@
 		8A3360392BFA501D0085C80F /* UserContentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentList.swift; sourceTree = "<group>"; };
 		8A33603C2BFB6C620085C80F /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
 		8A33603E2BFB72680085C80F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		8A3360412BFB89090085C80F /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		8A3360412BFB89090085C80F /* ThreadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadModel.swift; sourceTree = "<group>"; };
+		8A3360442BFB8B9F0085C80F /* CreateThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadViewModel.swift; sourceTree = "<group>"; };
+		8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadServiceProtocol.swift; sourceTree = "<group>"; };
+		8A3360492BFB8C130085C80F /* ThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadService.swift; sourceTree = "<group>"; };
+		8A33604B2BFB8C240085C80F /* MockThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockThreadService.swift; sourceTree = "<group>"; };
 		8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
 		8AFE7D512BF5F09000BF1247 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		8A329DDF2BF4CB1A00EA7CF8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8A3360462BFB8BD50085C80F /* Thread service */,
 				8A33600D2BF870230085C80F /* Auth service */,
 				8A3360242BF9EA640085C80F /* User service */,
 			);
@@ -156,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3360202BF8DD2E0085C80F /* User.swift */,
-				8A3360412BFB89090085C80F /* Thread.swift */,
+				8A3360412BFB89090085C80F /* ThreadModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +393,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8A3360432BFB8B8C0085C80F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A3360442BFB8B9F0085C80F /* CreateThreadViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8A3360462BFB8BD50085C80F /* Thread service */ = {
+			isa = PBXGroup;
+			children = (
+				8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */,
+				8A3360492BFB8C130085C80F /* ThreadService.swift */,
+				8A33604B2BFB8C240085C80F /* MockThreadService.swift */,
+			);
+			path = "Thread service";
+			sourceTree = "<group>";
+		};
 		8AFE7D4D2BF5EB9300BF1247 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				8AFE7D602BF5F1D600BF1247 /* View */,
+				8A3360432BFB8B8C0085C80F /* ViewModel */,
 			);
 			path = ThreadCreation;
 			sourceTree = "<group>";
@@ -558,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3360382BFA4D600085C80F /* ProfileHeader.swift in Sources */,
+				8A33604C2BFB8C240085C80F /* MockThreadService.swift in Sources */,
 				8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */,
 				8A3360292BF9EE260085C80F /* UserServiceProtocol.swift in Sources */,
 				8A33603D2BFB6C620085C80F /* CurrentUserProfileViewModel.swift in Sources */,
@@ -566,6 +595,7 @@
 				8A33603A2BFA501D0085C80F /* UserContentList.swift in Sources */,
 				8A3360122BF883270085C80F /* AuthService.swift in Sources */,
 				8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */,
+				8A33604A2BFB8C130085C80F /* ThreadService.swift in Sources */,
 				8A335FD62BF72D030085C80F /* EditProfileView.swift in Sources */,
 				8A3360262BF9EA7E0085C80F /* UserService.swift in Sources */,
 				8A3360312BFA39AB0085C80F /* ExploreViewModel.swift in Sources */,
@@ -574,6 +604,7 @@
 				8A335FCC2BF6FB2C0085C80F /* ExploreCell.swift in Sources */,
 				8AFE7D662BF5F30A00BF1247 /* ThreadCell.swift in Sources */,
 				8AFE7D5D2BF5F1BD00BF1247 /* ActivityView.swift in Sources */,
+				8A3360452BFB8B9F0085C80F /* CreateThreadViewModel.swift in Sources */,
 				8AFE7D592BF5F18300BF1247 /* CreateThreadView.swift in Sources */,
 				8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */,
 				8A33602E2BF9EF2A0085C80F /* ProfileViewModel.swift in Sources */,
@@ -581,6 +612,7 @@
 				8A335FCF2BF6FD150085C80F /* CircularProfileImage.swift in Sources */,
 				8A329DD22BF4CA3200EA7CF8 /* ContentView.swift in Sources */,
 				8A329DD02BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift in Sources */,
+				8A3360482BFB8BFE0085C80F /* ThreadServiceProtocol.swift in Sources */,
 				8A33602B2BF9EE310085C80F /* MockUserService.swift in Sources */,
 				8A3360352BFA44870085C80F /* CurrentUserProfile.swift in Sources */,
 				8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */,
@@ -588,7 +620,7 @@
 				8AFE7D642BF5F21D00BF1247 /* ProfileView.swift in Sources */,
 				8A329DED2BF4D7E900EA7CF8 /* RegistrationView.swift in Sources */,
 				8A3360212BF8DD2E0085C80F /* User.swift in Sources */,
-				8A3360422BFB89090085C80F /* Thread.swift in Sources */,
+				8A3360422BFB89090085C80F /* ThreadModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

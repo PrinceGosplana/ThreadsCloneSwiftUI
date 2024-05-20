@@ -1,5 +1,5 @@
 //
-//  Thread.swift
+//  ThreadModel.swift
 //  ThreadsCloneSwiftUI
 //
 //  Created by Oleksandr Isaiev on 20.05.2024.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Thread: Identifiable {
-    private var threadId: String?
+struct ThreadModel: Identifiable {
+    var threadId: String?
     let ownerUid: String
     let caption: String
     let timestamp: Date
