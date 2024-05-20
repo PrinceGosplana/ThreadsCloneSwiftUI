@@ -13,7 +13,7 @@ struct CurrentUserProfile: View {
     
     var body: some View {
         NavigationStack {
-            ProfileView(profileMode: .follow)
+            ProfileView(profileMode: .edit)
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {

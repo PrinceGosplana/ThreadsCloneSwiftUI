@@ -31,7 +31,7 @@ struct ExploreView: View {
                 }
             }
             .navigationDestination(for: User.self, destination: { user in
-                ProfileView(profileMode: .edit)
+                ProfileView(profileMode: .follow)
             })
             .navigationTitle("Search")
             .searchable(text: $searchText, prompt: "Search")
