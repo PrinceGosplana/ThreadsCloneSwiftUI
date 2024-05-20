@@ -13,6 +13,7 @@ enum ProfileMode {
 
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
+    @State private var showEditProfile = false
     let profileMode: ProfileMode
 
     private var currentUser: User? {
@@ -27,7 +28,9 @@ struct ProfileView: View {
                 ProfileHeader(user: currentUser)
 
                 Button {
-
+                    if profileMode == .edit {
+                        showEditProfile.toggle()
+                    }
                 } label: {
                     Text(profileMode == .edit ? "Edit Profile" : "Follow")
                         .font(.subheadline)
@@ -46,7 +49,9 @@ struct ProfileView: View {
                 UserContentList()
             }
         }
-        
+        .sheet(isPresented: $showEditProfile, content: {
+            EditProfileView()
+        })
         .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
         .scrollIndicators(.hidden)
