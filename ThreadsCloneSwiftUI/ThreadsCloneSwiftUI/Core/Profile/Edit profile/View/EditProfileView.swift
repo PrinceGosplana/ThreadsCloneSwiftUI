@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
+    let user: User
 
     @State private var bio = ""
     @State private var link = ""
@@ -29,7 +30,7 @@ struct EditProfileView: View {
                             Text("Name")
                                 .fontWeight(.semibold)
 
-                            Text("Charly Leklerk")
+                            Text(user.fullName)
                         }
 
                         Spacer()
@@ -94,7 +95,8 @@ struct EditProfileView: View {
 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
-
+                        Task { try await viewModel.uploadUserData() }
+                        dismiss()
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -106,5 +108,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView(viewModel: EditProfileViewModel())
+    EditProfileView(user: User.mockUsers[0], viewModel: EditProfileViewModel())
 }

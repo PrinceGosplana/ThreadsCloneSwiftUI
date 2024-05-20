@@ -15,6 +15,10 @@ class EditProfileViewModel: ObservableObject {
     }
     @Published var profileImage: Image?
 
+    func uploadUserData() async throws {
+
+    }
+    
     private func loadImage() async {
         guard let item = selectedItem else { return }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
