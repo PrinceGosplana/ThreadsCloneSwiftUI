@@ -9,13 +9,22 @@ import Foundation
 
 final class CreateThreadViewModel: ObservableObject {
     
-    @Published var caption = ""
-
+    func uploadThread(caption: String) async throws {
+        let thread = ThreadModel(
+            ownerUid: User.mockUsers[0].id,
+            caption: caption,
+            timestamp: Date(),
+            likes: 0,
+            replyCount: 0
+        )
+        try await ThreadService.uploadThread(thread)
+    }
+    
     func createThread() async throws {
         let thread = ThreadModel(
             threadId: UUID().uuidString,
             ownerUid: "",
-            caption: caption,
+            caption: "",
             timestamp: Date(),
             likes: 0,
             imageUrl: "",
