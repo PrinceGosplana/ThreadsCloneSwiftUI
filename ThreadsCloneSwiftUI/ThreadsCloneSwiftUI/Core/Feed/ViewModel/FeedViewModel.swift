@@ -10,14 +10,16 @@ import Foundation
 final class FeedViewModel: ObservableObject {
     @Published var threads = [ThreadModel]()
 
-    init() {
-        Task { try await fetchThreads() }
-    }
-
-    @MainActor
-    func fetchThreads() async throws {
-        threads = try await ThreadService.fetchThreads()
-        try await fetchUserDataForThreads()
+    func fetchThreads() async {
+        do {
+            let allThreads = try await ThreadService.fetchThreads()
+            try await fetchUserDataForThreads()
+            await MainActor.run {
+                threads = allThreads
+            }
+        } catch {
+            print("Error with fetching threads \(error.localizedDescription)")
+        }
     }
 
     private func fetchUserDataForThreads() async throws {

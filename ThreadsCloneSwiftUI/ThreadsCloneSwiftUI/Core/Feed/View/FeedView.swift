@@ -13,20 +13,22 @@ struct FeedView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
-                LazyVStack {
+            ScrollView {
+                VStack {
                     ForEach(viewModel.threads) { thread in
                         ThreadCell(thread: thread)
                     }
                 }
             }
             .refreshable {
-                Task { try await viewModel.fetchThreads() }
+                Task {await viewModel.fetchThreads() }
             }
             .navigationTitle("Threads")
             .navigationBarTitleDisplayMode(.inline)
         }
-
+        .task {
+            await viewModel.fetchThreads()
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

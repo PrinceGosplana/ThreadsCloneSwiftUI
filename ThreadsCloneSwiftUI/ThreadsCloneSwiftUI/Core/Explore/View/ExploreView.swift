@@ -15,7 +15,7 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack {
+                VStack {
                     ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             VStack {
