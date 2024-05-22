@@ -16,6 +16,7 @@ struct ProfileView: View {
     @State private var showEditProfile = false
     let profileMode: ProfileMode
 
+    var user: User?
     private var currentUser: User? {
         viewModel.currentUser
     }
@@ -46,7 +47,9 @@ struct ProfileView: View {
                 }
 
                 // user content list view
-                UserContentList()
+                if let currentUser {
+                    UserContentList(user: currentUser)
+                }
             }
         }
         .sheet(isPresented: $showEditProfile, content: {

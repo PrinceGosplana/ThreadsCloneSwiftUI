@@ -15,4 +15,10 @@ struct MockThreadService: ThreadServiceProtocol {
     static func fetchThreads() async throws -> [ThreadModel] {
         ThreadModel.mockThreads
     }
+
+    static func fetchUserThreads(uid: String) async throws -> [ThreadModel] {
+        var threads = ThreadModel.mockThreads
+        threads.append(ThreadModel(ownerUid: User.mockUsers[1].id, caption: "New post is here", timestamp: Date(), likes: 0, replyCount: 0))
+        return threads
+    }
 }

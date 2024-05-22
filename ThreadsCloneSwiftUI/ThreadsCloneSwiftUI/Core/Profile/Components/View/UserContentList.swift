@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserContentList: View {
-
+    @StateObject var viewModel: UserContentListViewModel
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace var animation
     private var filterBarWidth: CGFloat {
@@ -16,6 +16,10 @@ struct UserContentList: View {
         return UIScreen.main.bounds.width / count - 20
     }
     
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: UserContentListViewModel(user: user))
+    }
+
     var body: some View {
         VStack {
             HStack {
@@ -55,5 +59,5 @@ struct UserContentList: View {
 }
 
 #Preview {
-    UserContentList()
+    UserContentList(user: User.mockUsers[0])
 }

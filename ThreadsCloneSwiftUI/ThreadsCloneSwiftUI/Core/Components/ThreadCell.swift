@@ -24,7 +24,7 @@ struct ThreadCell: View {
 
                         Spacer()
 
-                        Text("18m")
+                        Text(thread.timestamp.dateToString())
                             .font(.caption)
                             .foregroundStyle(Color(.systemGray3))
 

@@ -10,4 +10,5 @@ import Foundation
 protocol ThreadServiceProtocol {
     static func uploadThread(_ thread: ThreadModel) async throws
     static func fetchThreads() async throws -> [ThreadModel]
+    static func fetchUserThreads(uid: String) async throws -> [ThreadModel]
 }
