@@ -20,7 +20,7 @@ struct CreateThreadView: View {
                     CircularProfileImage(user: user, size: .small)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Maxsodsgvoveuirhgore")
+                        Text(user?.userName ?? "")
                             .fontWeight(.semibold)
 
                         TextField("Start a thread...", text: $caption, axis: .vertical)
