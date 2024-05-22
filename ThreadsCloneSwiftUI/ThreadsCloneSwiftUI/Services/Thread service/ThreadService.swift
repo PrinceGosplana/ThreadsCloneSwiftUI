@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct ThreadService {
+struct ThreadService: ThreadServiceProtocol {
     static func uploadThread(_ thread: ThreadModel) async throws {
         
+    }
+
+    static func fetchThreads() async throws -> [ThreadModel] {
+        []
     }
 }

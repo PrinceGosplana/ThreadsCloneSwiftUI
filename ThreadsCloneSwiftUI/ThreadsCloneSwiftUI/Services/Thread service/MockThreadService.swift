@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct MockThreadService: ThreadServiceProtocol {
+    static func uploadThread(_ thread: ThreadModel) async throws {
+
+    }
+
+    static func fetchThreads() async throws -> [ThreadModel] {
+        []
+    }
+}
