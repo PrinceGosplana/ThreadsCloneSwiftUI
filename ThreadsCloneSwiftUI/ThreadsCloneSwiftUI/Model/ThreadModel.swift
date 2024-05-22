@@ -23,3 +23,12 @@ struct ThreadModel: Identifiable {
         threadId ?? UUID().uuidString
     }
 }
+
+
+extension ThreadModel {
+    static let mockThreads: [ThreadModel] = [
+        .init(ownerUid: User.mockUsers[0].id, caption: "Hello!", timestamp: Date(), likes: 0, replyCount: 0),
+        .init(ownerUid: User.mockUsers[1].id, caption: "It's me!", timestamp: Date(), likes: 0, replyCount: 0),
+        .init(ownerUid: User.mockUsers[0].id, caption: "Viva la loca", timestamp: Date(), likes: 0, replyCount: 0)
+    ]
+}
