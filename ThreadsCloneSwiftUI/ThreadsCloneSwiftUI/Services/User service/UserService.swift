@@ -26,4 +26,8 @@ actor UserService: UserServiceProtocol {
     func reset() {
         // set current user nil
     }
+
+    static func fetchUser(withUid uid: String) async throws -> User {
+        User.mockUsers.filter({ $0.id == uid})[0]
+    }
 }

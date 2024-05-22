@@ -17,5 +17,19 @@ final class FeedViewModel: ObservableObject {
     @MainActor
     private func fetchThreads() async throws {
         threads = try await ThreadService.fetchThreads()
+        try await fetchUserDataForThreads()
+    }
+
+    private func fetchUserDataForThreads() async throws {
+        for i in 0 ..< threads.count {
+            let thread = threads[i]
+            let ownerUid = thread.ownerUid
+            
+            let threadUser = try await UserService.fetchUser(withUid: ownerUid)
+
+            await MainActor.run {
+                threads[i].user = threadUser
+            }
+        }
     }
 }

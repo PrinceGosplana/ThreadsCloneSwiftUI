@@ -18,4 +18,8 @@ actor MockUserService: UserServiceProtocol {
     func fetchCurrentUser() async throws -> User? {
         currentUser
     }
+
+    static func fetchUser(withUid uid: String) async throws -> User {
+        User.mockUsers[0]
+    }
 }

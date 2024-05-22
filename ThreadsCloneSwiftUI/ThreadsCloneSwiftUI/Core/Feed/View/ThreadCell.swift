@@ -14,11 +14,11 @@ struct ThreadCell: View {
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                CircularProfileImage(user: nil, size: .small)
+                CircularProfileImage(user: thread.user, size: .small)
 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text("max")
+                        Text(thread.user?.userName ?? "")
                             .font(.footnote)
                         .fontWeight(.semibold)
 
