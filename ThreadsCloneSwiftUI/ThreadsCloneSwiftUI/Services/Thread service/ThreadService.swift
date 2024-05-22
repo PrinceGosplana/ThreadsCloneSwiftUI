@@ -8,11 +8,17 @@
 import Foundation
 
 struct ThreadService: ThreadServiceProtocol {
+    
+    private static var allThreads = [ThreadModel]()
+    
     static func uploadThread(_ thread: ThreadModel) async throws {
-        
+        allThreads.append(thread)
     }
-
+    
     static func fetchThreads() async throws -> [ThreadModel] {
-        ThreadModel.mockThreads
+        if allThreads.isEmpty {
+            allThreads.append(contentsOf: ThreadModel.mockThreads)
+        }
+        return allThreads
     }
 }
