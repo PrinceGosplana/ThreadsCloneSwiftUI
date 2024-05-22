@@ -45,8 +45,8 @@ struct UserContentList: View {
             }
 
             LazyVStack {
-                ForEach(0 ... 10, id:\.self) { thread in
-                    ThreadCell()
+                ForEach(ThreadModel.mockThreads) { thread in
+                    ThreadCell(thread: thread)
                 }
             }
         }

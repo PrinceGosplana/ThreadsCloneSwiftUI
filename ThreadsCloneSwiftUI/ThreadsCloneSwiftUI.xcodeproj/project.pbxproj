@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A01298A2BFDCAFD00CB157D /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0129892BFDCAFD00CB157D /* FeedViewModel.swift */; };
 		8A329DD02BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329DCF2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift */; };
 		8A329DD22BF4CA3200EA7CF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A329DD12BF4CA3200EA7CF8 /* ContentView.swift */; };
 		8A329DD42BF4CA3400EA7CF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A329DD32BF4CA3400EA7CF8 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A0129892BFDCAFD00CB157D /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		8A329DCC2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsCloneSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A329DCF2BF4CA3200EA7CF8 /* ThreadsCloneSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneSwiftUIApp.swift; sourceTree = "<group>"; };
 		8A329DD12BF4CA3200EA7CF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0129882BFDCAD900CB157D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A0129892BFDCAFD00CB157D /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8A329DC32BF4CA3200EA7CF8 = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +432,7 @@
 		8AFE7D502BF5F07D00BF1247 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				8A0129882BFDCAD900CB157D /* ViewModel */,
 				8AFE7D5F2BF5F1CB00BF1247 /* View */,
 			);
 			path = Feed;
@@ -591,6 +602,7 @@
 				8A3360292BF9EE260085C80F /* UserServiceProtocol.swift in Sources */,
 				8A33603D2BFB6C620085C80F /* CurrentUserProfileViewModel.swift in Sources */,
 				8A329DF02BF4D94300EA7CF8 /* ThreadsTextFieldModifier.swift in Sources */,
+				8A01298A2BFDCAFD00CB157D /* FeedViewModel.swift in Sources */,
 				8A3360142BF883410085C80F /* AuthServiceProtocol.swift in Sources */,
 				8A33603A2BFA501D0085C80F /* UserContentList.swift in Sources */,
 				8A3360122BF883270085C80F /* AuthService.swift in Sources */,

@@ -13,6 +13,6 @@ struct MockThreadService: ThreadServiceProtocol {
     }
 
     static func fetchThreads() async throws -> [ThreadModel] {
-        []
+        ThreadModel.mockThreads
     }
 }

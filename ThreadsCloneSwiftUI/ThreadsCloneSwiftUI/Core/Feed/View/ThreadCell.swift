@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ThreadCell: View {
+
+    let thread: ThreadModel
+
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
@@ -33,7 +36,7 @@ struct ThreadCell: View {
                         }
                     }
 
-                    Text("Formula 1 champion")
+                    Text(thread.caption)
                         .font(.footnote)
                         .multilineTextAlignment(.leading)
 
@@ -74,5 +77,5 @@ struct ThreadCell: View {
 }
 
 #Preview {
-    ThreadCell()
+    ThreadCell(thread: ThreadModel.mockThreads[0])
 }
