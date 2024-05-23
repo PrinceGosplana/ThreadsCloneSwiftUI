@@ -43,6 +43,7 @@
 		8A3360482BFB8BFE0085C80F /* ThreadServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */; };
 		8A33604A2BFB8C130085C80F /* ThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3360492BFB8C130085C80F /* ThreadService.swift */; };
 		8A33604C2BFB8C240085C80F /* MockThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33604B2BFB8C240085C80F /* MockThreadService.swift */; };
+		8AF3582E2BFF219500C0EAF9 /* ThreadLikeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF3582D2BFF219500C0EAF9 /* ThreadLikeProtocol.swift */; };
 		8AFE7D4F2BF5EBB500BF1247 /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */; };
 		8AFE7D522BF5F09000BF1247 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D512BF5F09000BF1247 /* FeedView.swift */; };
 		8AFE7D562BF5F14F00BF1247 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */; };
@@ -91,6 +92,7 @@
 		8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadServiceProtocol.swift; sourceTree = "<group>"; };
 		8A3360492BFB8C130085C80F /* ThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadService.swift; sourceTree = "<group>"; };
 		8A33604B2BFB8C240085C80F /* MockThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockThreadService.swift; sourceTree = "<group>"; };
+		8AF3582D2BFF219500C0EAF9 /* ThreadLikeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadLikeProtocol.swift; sourceTree = "<group>"; };
 		8AFE7D4E2BF5EBB500BF1247 /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
 		8AFE7D512BF5F09000BF1247 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		8AFE7D552BF5F14F00BF1247 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				8A3360472BFB8BFE0085C80F /* ThreadServiceProtocol.swift */,
 				8A3360492BFB8C130085C80F /* ThreadService.swift */,
 				8A33604B2BFB8C240085C80F /* MockThreadService.swift */,
+				8AF3582D2BFF219500C0EAF9 /* ThreadLikeProtocol.swift */,
 			);
 			path = "Thread service";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				8A01298A2BFDCAFD00CB157D /* FeedViewModel.swift in Sources */,
 				8A01298E2BFDEECD00CB157D /* UserContentListViewModel.swift in Sources */,
 				8A3360142BF883410085C80F /* AuthServiceProtocol.swift in Sources */,
+				8AF3582E2BFF219500C0EAF9 /* ThreadLikeProtocol.swift in Sources */,
 				8A33603A2BFA501D0085C80F /* UserContentList.swift in Sources */,
 				8A3360122BF883270085C80F /* AuthService.swift in Sources */,
 				8A3360162BF883AE0085C80F /* MockAuthService.swift in Sources */,

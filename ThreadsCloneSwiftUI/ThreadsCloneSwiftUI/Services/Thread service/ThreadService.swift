@@ -25,4 +25,22 @@ struct ThreadService: ThreadServiceProtocol {
     static func fetchUserThreads(uid: String) async throws -> [ThreadModel] {
         allThreads.filter({ $0.id == uid})
     }
+    
+}
+
+
+// MARK: Likes
+
+extension ThreadService: ThreadLikeProtocol {
+    static func likeThread(_ thread: ThreadModel) async throws {
+
+    }
+
+    static func unlikeThread(_ thread: ThreadModel) async throws {
+
+    }
+
+    static func checkIfUserLikedThread(_ thread: ThreadModel) async throws -> Bool {
+        false
+    }
 }
